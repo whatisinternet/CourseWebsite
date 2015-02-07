@@ -16,10 +16,14 @@ gem 'foundation-rails'
 gem 'simple_form'
 
 group :test do
-	gem 'rspec', '~> 3'
+	gem 'faker'
+	gem 'database_cleaner'
 end
 
 group :development, :test do
+  gem 'factory_girl_rails', :require => false
+  gem 'rspec-rails', '~> 3.0'
+  gem 'guard-rspec', require: false
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 

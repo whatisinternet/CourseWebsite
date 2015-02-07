@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'page/index'
+
   devise_for :users
   resources :users
 
