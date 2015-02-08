@@ -1,14 +1,15 @@
 require 'rails_helper'
+require 'faker'
 
 RSpec.describe UsersController, type: :controller do
 	include Devise::TestHelpers
 
   let(:valid_attributes) {
-    {email: "valid@email.com", password: "password"}
+    {user: {email: "valid@emai@@l.com", password: "pasword"}}
   }
 
   let(:invalid_attributes) {
-   {email: "valid@emai@@l.com", password: "pasword"}
+   {user: {email: "valid@emai@@l.com", password: "pasword"}}
   }
   let(:valid_session) { {} }
 
@@ -54,6 +55,16 @@ RSpec.describe UsersController, type: :controller do
       post :destroy, {id: @user.id}
       expect(response).to redirect_to(users_path)
     end
+  end
+
+  describe "PUT update/:id" do
+    before(:each) do
+      put :update, :id => @user.id, :user => {email: Faker::Internet.email}
+      @user.reload
+    end
+
+    it { expect(response).to redirect_to(@user) }
+    it { expect(@user.email).to eql @user.email }
   end
 
 
