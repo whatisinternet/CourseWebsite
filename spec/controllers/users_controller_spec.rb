@@ -5,11 +5,11 @@ RSpec.describe UsersController, type: :controller do
 	include Devise::TestHelpers
 
   let(:valid_attributes) {
-    {user: {email: "valid@emai@@l.com", password: "pasword"}}
+    {user: {email: Faker::Internet.email, password: Faker::Internet.password(1, 9)}}
   }
 
   let(:invalid_attributes) {
-   {user: {email: "valid@emai@@l.com", password: "pasword"}}
+   {user: {email: Faker::Lorem.characters(10), password: Faker::Internet.password(10, 19)}}
   }
   let(:valid_session) { {} }
 
