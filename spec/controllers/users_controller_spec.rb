@@ -63,7 +63,7 @@ RSpec.describe UsersController, type: :controller do
       @user.reload
     end
 
-    it { expect(response).to redirect_to(@user) }
+    it { expect(response).to be_success }
     it { expect(@user.email).to eql @user.email }
   end
 
