@@ -26,6 +26,11 @@ require 'rails_helper'
 require 'faker'
 
 RSpec.describe User, type: :model do
+
+  describe User do
+  	it { should have_many(:courses) }
+  end
+
 	it "should have valid factory" do
 	    expect(FactoryGirl.build(:user)).to be_valid
 	end

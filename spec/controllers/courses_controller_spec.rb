@@ -24,12 +24,16 @@ RSpec.describe CoursesController, type: :controller do
   # Course. As you add validations to Course, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {code: Faker::Lorem.characters(5), description: Faker::Lorem.paragraph, user: FactoryGirl.create(:user)}
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {code: Faker::Lorem.characters(1), description: Faker::Lorem.characters(5), user: FactoryGirl.create(:user)}
   }
+
+  before(:each) do
+    @course = FactoryGirl.create :course
+  end
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -38,17 +42,16 @@ RSpec.describe CoursesController, type: :controller do
 
   describe "GET #index" do
     it "assigns all courses as @courses" do
-      course = Course.create! valid_attributes
+      courses = Course.all
       get :index, {}, valid_session
-      expect(assigns(:courses)).to eq([course])
+      expect(assigns(:courses)).to eq(courses)
     end
   end
 
   describe "GET #show" do
     it "assigns the requested course as @course" do
-      course = Course.create! valid_attributes
-      get :show, {:id => course.to_param}, valid_session
-      expect(assigns(:course)).to eq(course)
+      get :show, {:id => @course.to_param}, valid_session
+      expect(assigns(:course)).to eq(@course)
     end
   end
 
@@ -103,14 +106,14 @@ RSpec.describe CoursesController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {code: Faker::Lorem.characters(5), description: Faker::Lorem.paragraph, user: FactoryGirl.create(:user)}
       }
 
       it "updates the requested course" do
         course = Course.create! valid_attributes
         put :update, {:id => course.to_param, :course => new_attributes}, valid_session
         course.reload
-        skip("Add assertions for updated state")
+        expect(assigns(:course)).to_not eq(@course)
       end
 
       it "assigns the requested course as @course" do
