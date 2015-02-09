@@ -51,4 +51,20 @@ RSpec.describe User, type: :model do
 	    expect(FactoryGirl.build(:user, :email => Faker::Internet.email, :password => "-1")).to_not be_valid
 	end
 
+	describe "get_courses" do
+		it "should return the courses related to a user" do
+			course = FactoryGirl.create(:course)
+			user = User.find_by_id(course.user_id)
+			expect(user.get_courses).to match(course) 
+		end
+	end
+
+	describe "course_by" do
+		it "should return the course by the code and section" do
+			course = FactoryGirl.create(:course)
+			user = User.find_by_id(course.user_id)
+			expect(user.course_by(course.code, course.section)).to match(course) 
+		end
+	end
+
 end

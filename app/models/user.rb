@@ -33,4 +33,12 @@ class User < ActiveRecord::Base
 
   has_many :courses
 
+  def get_courses
+  	Course.find_by_user_id(id)
+  end
+
+  def course_by(code, section)
+  	Course.find_by(code: code, section:section)
+  end
+
 end
