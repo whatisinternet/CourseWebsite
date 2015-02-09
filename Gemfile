@@ -18,6 +18,7 @@ gem 'simple_form'
 group :test do
 	gem 'faker'
 	gem 'database_cleaner'
+  gem 'shoulda-matchers'
 end
 
 group :development, :test do
