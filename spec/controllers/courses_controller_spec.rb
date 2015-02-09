@@ -24,7 +24,7 @@ RSpec.describe CoursesController, type: :controller do
   # Course. As you add validations to Course, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    {code: Faker::Lorem.characters(5), description: Faker::Lorem.paragraph, user: FactoryGirl.create(:user)}
+    {code: Faker::Lorem.characters(5), section: Faker::Lorem.characters(5), description: Faker::Lorem.paragraph, user: FactoryGirl.create(:user)}
   }
 
   let(:invalid_attributes) {
