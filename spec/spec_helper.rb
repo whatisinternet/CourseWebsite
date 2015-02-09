@@ -19,7 +19,9 @@
 require 'devise'
 require 'factory_girl_rails'
 
+
 RSpec.configure do |config|
+  #config.include SignInSupport, :type => :controller
   config.include Devise::TestHelpers, :type => :controller
   config.before(:suite) { FactoryGirl.reload }
   # rspec-expectations config goes here. You can use an alternate

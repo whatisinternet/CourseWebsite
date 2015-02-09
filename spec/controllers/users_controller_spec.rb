@@ -13,7 +13,13 @@ RSpec.describe UsersController, type: :controller do
   }
   let(:valid_session) { {} }
 
+  def setup
+    @request.env["devise.mapping"] = Devise.mappings[:user]
+    sign_in FactoryGirl.create(:user)
+  end
+
   before(:each) do
+    setup
     @user = FactoryGirl.create :user
   end
 
