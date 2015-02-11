@@ -12,6 +12,8 @@ RSpec.describe "courses/edit", type: :view do
 
       assert_select "input#course_code[name=?]", "course[code]"
 
+      assert_select "input#course_section[name=?]", "course[section]"
+
       assert_select "input#course_description[name=?]", "course[description]"
 
       assert_select "input#course_user_id[name=?]", "course[user_id]"
