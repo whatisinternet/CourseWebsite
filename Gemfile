@@ -14,6 +14,8 @@ gem 'devise'
 gem 'cancancan'
 gem 'foundation-rails'
 gem 'simple_form'
+gem 'high_voltage', '~> 2.2.1'
+gem 'redcarpet'
 
 group :test do
 	gem 'faker'

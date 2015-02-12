@@ -15,10 +15,10 @@
         <a href="#">Courses</a>
         <ul class="dropdown">
           <% Course.all.each do |course| %>
-            <li><a href="/section/<%course.section%>"><%"#{course.code} #{course.section}"%></a></li>
+            <li><a href="/courses/<%=course.id%>"><%=course.code%></a></li>
           <% end %>
         </ul>
-      </li>
+        </li>
       	<% if user_signed_in? %>
 		  <li>
 		  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
