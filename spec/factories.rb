@@ -8,10 +8,9 @@ FactoryGirl.define do
 	end
 
 	factory :course do
-		code { Faker::Lorem.characters(5) }
-		section { Faker::Lorem.characters(3) }
-    	description { Faker::Lorem.paragraph }
-    	user { FactoryGirl.create(:user) }
+      code { Faker::Lorem.characters(5) }
+      description { Faker::Lorem.paragraph }
+      user { FactoryGirl.create(:user) }
 	end
 
 end

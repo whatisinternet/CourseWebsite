@@ -5,7 +5,6 @@ RSpec.describe "courses/new", type: :view do
     assign(:course, Course.new(
       :code => "MyString",
       :description => "MyString",
-      :section => "MyString",
       :user_id => 1
     ))
   end
@@ -16,8 +15,6 @@ RSpec.describe "courses/new", type: :view do
     assert_select "form[action=?][method=?]", courses_path, "post" do
 
       assert_select "input#course_code[name=?]", "course[code]"
-
-      assert_select "input#course_section[name=?]", "course[section]"
 
       assert_select "input#course_description[name=?]", "course[description]"
 

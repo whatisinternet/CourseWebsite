@@ -63,7 +63,7 @@ RSpec.describe User, type: :model do
 		it "should return the course by the code and section" do
 			course = FactoryGirl.create(:course)
 			user = User.find_by_id(course.user_id)
-			expect(user.course_by(course.code, course.section)).to match(course) 
+			expect(user.course_by(course.code)).to match(course) 
 		end
 	end
 

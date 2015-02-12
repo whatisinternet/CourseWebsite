@@ -37,8 +37,8 @@ class User < ActiveRecord::Base
   	Course.find_by_user_id(id)
   end
 
-  def course_by(code, section)
-  	Course.find_by(code: code, section:section)
+  def course_by(code)
+  	Course.find_by_code(code)
   end
 
 end
