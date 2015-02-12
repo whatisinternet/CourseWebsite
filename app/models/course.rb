@@ -16,4 +16,5 @@ class Course < ActiveRecord::Base
 	validates :description, length: { minimum: 15 }
 
 	belongs_to :user
+  has_many   :lectures
 end
