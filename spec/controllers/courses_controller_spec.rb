@@ -31,7 +31,6 @@ RSpec.describe CoursesController, type: :controller do
   let(:invalid_attributes) {
     {code: Faker::Lorem.characters(1), description: Faker::Lorem.characters(5), user: FactoryGirl.create(:user)}
   }
-
   before(:each) do
     setup
     @course = FactoryGirl.create :course

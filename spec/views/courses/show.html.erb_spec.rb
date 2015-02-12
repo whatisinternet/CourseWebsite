@@ -7,8 +7,8 @@ RSpec.describe "courses/show", type: :view do
 
   it "renders attributes in <p>" do
     render
-    expect(rendered).to match(/Code/)
-    expect(rendered).to match(/Description/)
-    expect(rendered).to match(/1/)
+    expect(rendered).to match(@course.code)
+    expect(rendered).to match(@course.description)
+    expect(rendered).to match(@course.user_id.to_s)
   end
 end
