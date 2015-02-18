@@ -9,6 +9,4 @@ Rails.application.routes.draw do
   resources :users
 
   root to: "page#index"
-
-  get 'admin' => "admin#index"
 end
