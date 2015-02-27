@@ -23,8 +23,10 @@ FactoryGirl.define do
     course { FactoryGirl.create(:course) }
   end
 
-  factory :role do
-    role :admin
+  factory :assignment do
+    base_info { Faker::Lorem.paragraph }
+    name { Faker::Lorem.characters(5) }
+    course { FactoryGirl.create(:course) }
+    
   end
-
 end
