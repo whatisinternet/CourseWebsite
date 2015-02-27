@@ -33,6 +33,7 @@ RSpec.describe User, type: :model do
 
 	it "should have valid factory" do
 	    expect(FactoryGirl.build(:user)).to be_valid
+      expect(FactoryGirl.build(:admin)).to be_valid
 	end
 
 	it "should require a email" do
@@ -66,5 +67,6 @@ RSpec.describe User, type: :model do
 			expect(user.course_by(course.code)).to match(course) 
 		end
 	end
+
 
 end

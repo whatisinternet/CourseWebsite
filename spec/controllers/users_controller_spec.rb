@@ -15,7 +15,7 @@ RSpec.describe UsersController, type: :controller do
 
   def setup
     @request.env["devise.mapping"] = Devise.mappings[:user]
-    sign_in FactoryGirl.create(:user)
+    sign_in FactoryGirl.create(:admin)
   end
 
   before(:each) do

@@ -23,6 +23,7 @@
 #
 
 class User < ActiveRecord::Base
+  rolify
   # Include default devise modules. Others available are:
   # :confirmable,   and  :recoverable,:lockable,
   devise :database_authenticatable,
@@ -39,6 +40,10 @@ class User < ActiveRecord::Base
 
   def course_by(code)
   	Course.find_by_code(code)
+  end
+
+  def role?(role)
+    return !!self.roles.find_by_name(role.to_s.camelize)
   end
 
 end

@@ -38,7 +38,7 @@ RSpec.describe CoursesController, type: :controller do
 
   def setup
     @request.env["devise.mapping"] = Devise.mappings[:user]
-    sign_in FactoryGirl.create(:user)
+    sign_in FactoryGirl.create(:admin)
   end
 
   # This should return the minimal set of values that should be in the session
