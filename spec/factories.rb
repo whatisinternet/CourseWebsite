@@ -27,6 +27,7 @@ FactoryGirl.define do
     base_info { Faker::Lorem.paragraph }
     name { Faker::Lorem.characters(5) }
     course { FactoryGirl.create(:course) }
+    due { Faker::Date.forward(23) }
   end
 
 end

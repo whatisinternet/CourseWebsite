@@ -13,5 +13,6 @@
 class AssignmentQuestion < ActiveRecord::Base
   validates :question, length: { minimum: 10 }
   validates :question_number, length: { minimum: 1 }
+  validates :question_number, :question, presence: true
   belongs_to :assignment
 end
