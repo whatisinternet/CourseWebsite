@@ -27,6 +27,6 @@ FactoryGirl.define do
     base_info { Faker::Lorem.paragraph }
     name { Faker::Lorem.characters(5) }
     course { FactoryGirl.create(:course) }
-    
   end
+
 end
