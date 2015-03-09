@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: coursewebsite_production
-  username: course_website
+  username: coursewebsite
   password: <%= ENV['COURSEWEBSITE_DATABASE_PASSWORD'] %>
