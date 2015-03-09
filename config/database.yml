@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: <%= ENV['DATABASE_URL'] %>
+  database: coursewebsite_production
   username: course_website
   password: <%= ENV['COURSEWEBSITE_DATABASE_PASSWORD'] %>
