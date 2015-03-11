@@ -9,5 +9,7 @@ puts "roles"
 Role.create([{:name => 'admin'}, {:name => 'user'}, {:name => 'professor'}])
 puts "Users"
 user = User.create({email: 'sample2@email.com', password: 'changeMe'})
+puts "Username: #{user.email}, Password: changeMe"
 puts "Adding a role"
 user.add_role :admin
+puts "Done!"
