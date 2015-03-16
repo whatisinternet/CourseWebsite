@@ -14,10 +14,10 @@ gem 'devise'
 gem 'cancancan'
 gem 'foundation-rails'
 gem 'simple_form'
-gem 'high_voltage', '~> 2.2.1'
 gem 'redcarpet'
 gem 'rails_admin'
 gem 'rolify'
+gem 'spark_plugs'
 
 group :test do
 	gem 'faker'
