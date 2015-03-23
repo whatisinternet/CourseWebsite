@@ -18,6 +18,7 @@ gem 'redcarpet'
 gem 'rails_admin'
 gem 'rolify'
 gem 'spark_plugs'
+gem 'rails_12factor'
 
 group :test do
   gem 'faker'
