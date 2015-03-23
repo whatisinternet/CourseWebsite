@@ -19,6 +19,7 @@ gem 'rails_admin'
 gem 'rolify'
 gem 'spark_plugs'
 gem 'rails_12factor'
+gem 'newrelic_rpm'
 
 group :test do
   gem 'faker'
