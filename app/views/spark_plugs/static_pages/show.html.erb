@@ -1,4 +1,4 @@
 <% set_title %>
 <div id="static_content">
-    <%= @static_page.content.html_safe %>
+    <%= markdown_content(@static_page.content).html_safe %>
   </div>
