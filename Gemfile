@@ -18,8 +18,11 @@ gem 'redcarpet'
 gem 'rails_admin'
 gem 'rolify'
 gem 'spark_plugs'
-gem 'rails_12factor'
 gem 'newrelic_rpm'
+
+group :production do
+    gem 'rails_12factor'
+end
 
 group :test do
   gem 'faker'
