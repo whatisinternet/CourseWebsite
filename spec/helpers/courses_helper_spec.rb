@@ -11,5 +11,14 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe CoursesHelper, type: :helper do
-  #pending "add some examples to (or delete) #{__FILE__}"
+
+  #before :each do
+  #  @course = FactoryGirl.create(:course)
+  #  _note = FactoryGirl.create(:note)
+  #  _note.course_id = @course.id
+  #  _note.save!
+  #end
+
+  # Need to add a spec for notes here but time is needed.
+  # TODO: Add spec for notes
 end

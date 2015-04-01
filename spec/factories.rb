@@ -30,4 +30,12 @@ FactoryGirl.define do
     due { Faker::Date.forward(23) }
   end
 
+  factory :note do
+    title   { Faker::Lorem.characters(25) }
+    body    { Faker::Lorem.paragraph }
+    date    { Faker::Date.forward(23) }
+    course { FactoryGirl.create(:course) }
+    display { false }
+  end
+
 end

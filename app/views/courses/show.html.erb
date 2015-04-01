@@ -1,19 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Code:</strong>
-  <%= @course.code %>
-</p>
+ <div class="row">
+        <div class="large-12 columns">
+		  <h1><%= @course.code %></h1>
+		  <h5><%= @course.description %></h5>
+          <hr>
+        </div>
+  </div>
+       
+     
+<div class="row">
+  <div class="large-12 columns">
+    <div class="row">
+      <div class="large-4 small-6 columns">
+            <h4>Announcements</h4><hr>
 
-<p>
-  <strong>Description:</strong>
-  <%= @course.description %>
-</p>
+            <%= render_notes.html_safe %>
+      </div>
+      <div class="large-4 small-6 columns">
+            <h4>Assignments</h4><hr>
 
-<p>
-  <strong>User:</strong>
-  <%= @course.user_id %>
-</p>
+            <%= render_notes.html_safe %>
+      </div>
 
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+      <div class="large-4 small-6 columns">
+            <h4>Lectures</h4><hr>
+
+            <%= render_notes.html_safe %>
+      </div>
+	</div>
+</div>     
+
+  <hr>
+

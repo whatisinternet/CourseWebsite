@@ -2,6 +2,7 @@ class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
   skip_authorize_resource :only => :show
+  layout "course", only: [:index, :show]
 
   # GET /courses
   # GET /courses.json
@@ -66,7 +67,7 @@ class CoursesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_course
-      @course = Course.find(params[:id])
+      @course = Course.includes(:notes, :lectures, :assignments).find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
