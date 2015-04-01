@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+ <div class="row">
+        <div class="large-12 columns">
+          <h1><%= @assignment.name.upcase %></h1>
+          <hr>
+          <h2><strong><%= @assignment.due -%></strong></h2>
+        <p><%= @assignment.base_info.html_safe %></p>
+        <hr>
+        </div>
+  </div>

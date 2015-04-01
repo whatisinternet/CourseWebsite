@@ -10,7 +10,9 @@ module CoursesHelper
   def render_assignments
     out_string = ""
     @course.assignments.each do |assignment|
-      out_string += (render :partial => 'courses/assignments', locals: {:assignment => assignment}).to_s
+      if assignment.due >= Date.today
+        out_string += (render :partial => 'courses/assignments', locals: {:assignment => assignment}).to_s
+      end
     end
     out_string.html_safe
   end
