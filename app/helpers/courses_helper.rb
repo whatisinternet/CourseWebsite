@@ -6,4 +6,12 @@ module CoursesHelper
     end
     out_string.html_safe
   end
+
+  def render_assignments
+    out_string = ""
+    @course.assignments.each do |assignment|
+      out_string += (render :partial => 'courses/assignments', locals: {:assignment => assignment}).to_s
+    end
+    out_string.html_safe
+  end
 end
