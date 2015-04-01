@@ -30,6 +30,12 @@ FactoryGirl.define do
     due { Faker::Date.forward(23) }
   end
 
+  factory :assignment_question do
+    question { Faker::Lorem.paragraph }
+    question_number { 5 }
+    assignment { FactoryGirl.create(:assignment)}
+  end
+
   factory :note do
     title   { Faker::Lorem.characters(25) }
     body    { Faker::Lorem.paragraph }

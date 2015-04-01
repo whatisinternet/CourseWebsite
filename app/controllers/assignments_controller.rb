@@ -9,7 +9,7 @@ class AssignmentsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_assignment
-      @assignment = Assignment.includes(:assignment_questions).find(params[:id])
+      @assignment = Assignment.includes(:assignment_questions).find_by_id(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
