@@ -1,11 +1,16 @@
 h1 Assignments
-ul.accordion data-accordion="" 
-  - @assignments.each do |assignment|
-    li.accordion-navigation
-      a href="#panel-#{assignment.name}" 
-        = assignment.name
-        | | Due: #{assignment.due.to_s}
-      .content id="panel-#{assignment.name}" 
-        .row
-          .small-10.columns= assignment.base_info
-          .small-2.columns= link_to "Details", assignment_path(assignment)
+hr
+table style="width:100%"
+  thead
+    tr
+      th="Assignment"
+      th="Due"
+      th="notes"
+      th="Assignment details"
+  tbody
+    - @assignments.each do |assignment|
+      tr
+        td=assignment.name
+        td="Due: #{assignment.due.to_s}"
+        td=assignment.base_info
+        td=link_to "Details", assignment_path(assignment)
