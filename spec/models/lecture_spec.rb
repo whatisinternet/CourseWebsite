@@ -2,13 +2,14 @@
 #
 # Table name: lectures
 #
-#  content    :text
-#  course_id  :integer
-#  created_at :datetime         not null
-#  id         :integer          not null, primary key
-#  name       :string           not null
-#  slides     :string
-#  updated_at :datetime         not null
+#  content      :text
+#  course_id    :integer
+#  created_at   :datetime         not null
+#  id           :integer          not null, primary key
+#  lecture_date :date
+#  name         :string           not null
+#  slides       :string
+#  updated_at   :datetime         not null
 #
 
 require 'rails_helper'

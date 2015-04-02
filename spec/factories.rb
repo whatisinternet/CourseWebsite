@@ -19,6 +19,7 @@ FactoryGirl.define do
   factory :lecture do
     name { Faker::Lorem.characters(255) }
     content { Faker::Lorem.characters(50) }
+    lecture_date Faker::Date.forward(2)
     slides { Faker::Internet.url }
     course { FactoryGirl.create(:course) }
   end

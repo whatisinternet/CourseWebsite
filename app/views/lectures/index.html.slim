@@ -1,19 +1,12 @@
 p#notice= notice
-h1 Listing Lectures
-table
+h1 Lectures
+table style="width=100%"
   thead
     tr
       th Name
-      th Content
-      th Slides
-      th colspan="3" 
+      th Date
   tbody
     - @lectures.each do |lecture|
       tr
         td= lecture.name
-        td= lecture.content
-        td= lecture.slides
-        td= link_to 'Show', lecture
-        td= link_to 'Edit', edit_lecture_path(lecture)
-br/
-= link_to 'New Lecture', new_lecture_path
+        td= lecture.lecture_date
