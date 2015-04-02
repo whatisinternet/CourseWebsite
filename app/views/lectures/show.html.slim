@@ -1,13 +1,14 @@
-p#notice= notice
-p
-  strong Name:
-  = @lecture.name
-p
-  strong Content:
-  = @lecture.content
-p
-  strong Slides:
-  = @lecture.slides
-= link_to 'Edit', edit_lecture_path(@lecture)
-| \
-= link_to 'Back', lectures_path
+- renderer = Redcarpet::Render::HTML.new(hard_wrap: true)
+- markdown = Redcarpet::Markdown.new(renderer, extensions = {})
+
+#notice= notice
+.row
+  .large-12.columns
+    h1= @lecture.name
+    hr
+    strong= "Lecture Date: #{@lecture.lecture_date}"
+    div.row
+      div.small-10.large-8.columns
+        p= markdown.render(@lecture.content).html_safe
+      div.small-2.large-2.columns
+        a.button.large.success href=@lecture.slides title="Slides" Slides
