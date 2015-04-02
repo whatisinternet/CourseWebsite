@@ -1,11 +1,14 @@
-p#notice= notice
+- renderer = Redcarpet::Render::HTML.new(hard_wrap: true)
+- markdown = Redcarpet::Markdown.new(renderer, extensions = {})
+
+#notice= notice
 .row
   .large-12.columns
     h1= @assignment.name.upcase
     hr/
     h2
-      strong= @assignment.due
-    p= @assignment.base_info.html_safe
+      strong= "Due: #{@assignment.due}"
+    p= markdown.render(@assignment.base_info).html_safe
     hr/
 .row
   .large-12.columns
