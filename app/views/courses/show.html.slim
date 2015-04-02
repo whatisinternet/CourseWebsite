@@ -1,0 +1,22 @@
+p#notice= notice
+.row
+  .large-12.columns
+    h1= @course.code
+    h5= @course.description
+    hr/
+.row
+  .large-12.columns
+    .row
+      .large-4.small-6.columns
+        h4 Announcements
+        hr/
+        = render_notes.html_safe
+      .large-4.small-6.columns
+        h4 Assignments
+        hr/
+        = render_assignments.html_safe
+      .large-4.small-6.columns
+        h4 Lectures
+        hr/
+        = render_notes.html_safe
+  hr/
