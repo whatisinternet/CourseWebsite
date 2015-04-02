@@ -1,12 +1,22 @@
 p#notice= notice
 h1 Lectures
-table style="width=100%"
+table style="width:100%"
   thead
     tr
+      th
       th Name
       th Date
   tbody
     - @lectures.each do |lecture|
       tr
-        td= lecture.name
+        - if lecture.lecture_date < Date.today
+          td
+            h5 &#x2713;
+        - elsif lecture.lecture_date == Date.today
+          td
+            h5 &#x21d2;
+        - else
+          td
+            h5 &#x2715;
+        td=link_to lecture.name, lecture_path(lecture)
         td= lecture.lecture_date

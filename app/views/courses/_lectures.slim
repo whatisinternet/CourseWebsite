@@ -1,0 +1,5 @@
+.row
+  .large-12.columns
+    .panel.callout.radius
+      h5=link_to lecture.name, lecture_path(lecture)
+      p="#{lecture.content[0..10]}..."
