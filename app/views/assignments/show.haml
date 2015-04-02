@@ -1,0 +1,12 @@
+%p#notice= notice
+.row
+  .large-12.columns
+    %h1= @assignment.name.upcase
+    %hr/
+    %h2
+      %strong= @assignment.due
+    %p= @assignment.base_info.html_safe
+    %hr/
+.row
+  .large-12.columns
+    = render_assignment_questions.html_safe
