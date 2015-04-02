@@ -3,6 +3,7 @@
 # Table name: notes
 #
 #  body       :text
+#  course_id  :integer
 #  created_at :datetime         not null
 #  date       :date
 #  display    :boolean

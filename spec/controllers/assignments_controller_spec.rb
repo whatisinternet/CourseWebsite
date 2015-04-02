@@ -31,4 +31,12 @@ RSpec.describe AssignmentsController, type: :controller do
       expect(assigns(:assignment)).to eq(@assignment)
     end
   end
+
+  describe "index" do
+    it "should should return all of the assignments" do
+      assignments = Assignment.all
+      get :index, {}, valid_session
+      expect(assigns(:assignments)).to eq(assignments)
+    end
+  end
 end
