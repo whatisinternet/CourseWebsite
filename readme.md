@@ -26,7 +26,9 @@ simple CRUD solution in a cleaner and more up to date way.
 ## Usage
 
 1.
-  Clone
+  ```
+  git clone https://github.com/whatisinternet/CourseWebsite.git
+  ```
 2.
   ```
   bundle install
