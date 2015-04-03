@@ -7,8 +7,6 @@ html lang="en"
     title= content_for?(:title) ? yield(:title) : "Course Websites by whatisinternet"
     = stylesheet_link_tag    "application"
     = javascript_include_tag "vendor/modernizr"
-    = javascript_include_tag "application"
-    = yield :scripts
     = csrf_meta_tags
   body
     = render 'application/nav'
@@ -16,3 +14,4 @@ html lang="en"
       = render 'application/messages'
       = yield
       = render 'application/footer'
+  = javascript_include_tag "application"
