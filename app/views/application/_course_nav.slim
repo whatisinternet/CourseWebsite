@@ -9,19 +9,20 @@
           span Menu
     section.top-bar-section
       /! Right Nav Section
-      ul.right
-        li.has-dropdown
-          a href="#" Lectures
-          ul.dropdown
-            - @course.lectures.each do |lecture|
-              li
-                = link_to lecture.name, lecture_path(lecture)
+      - if @course
+        ul.right
+          li.has-dropdown
+            a href="#" Lectures
+            ul.dropdown
+              - @course.lectures.each do |lecture|
+                li
+                  = link_to lecture.name, lecture_path(lecture)
 
-        li.has-dropdown
-          a href="#" Assignments
-          ul.dropdown
-            - @course.assignments.each do |assignment|
-              li
-                = link_to assignment.name, assignment_path(assignment)
-        == render partial: "default_right_nav"
+          li.has-dropdown
+            a href="#" Assignments
+            ul.dropdown
+              - @course.assignments.each do |assignment|
+                li
+                  = link_to assignment.name, assignment_path(assignment)
+          == render partial: "default_right_nav"
 
