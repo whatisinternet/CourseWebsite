@@ -6,9 +6,8 @@
   .large-12.columns
     h1= @lecture.name
     hr
+    a.button.large.success href=@lecture.slides title="Slides" Slides
+    br
     strong= "Lecture Date: #{@lecture.lecture_date}"
     div.row
-      div.small-10.large-10.columns
-        p= markdown.render(@lecture.content).html_safe
-      div.small-2.large-2.columns
-        a.button.large.success href=@lecture.slides title="Slides" Slides
+      p= markdown.render(@lecture.content).html_safe

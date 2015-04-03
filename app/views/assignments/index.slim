@@ -1,6 +1,3 @@
-- renderer = Redcarpet::Render::HTML.new(hard_wrap: true)
-- markdown = Redcarpet::Markdown.new(renderer, extensions = {})
-
 h1 Assignments
 hr
 table style="width:100%"
@@ -8,12 +5,10 @@ table style="width:100%"
     tr
       th="Assignment"
       th="Due"
-      th="Notes"
       th="Details"
   tbody
     - @assignments.each do |assignment|
       tr
         td=assignment.name
         td="#{assignment.due.to_s}"
-        td= markdown.render(assignment.base_info).html_safe
         td=link_to "Details", assignment_path(assignment)

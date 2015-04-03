@@ -9,7 +9,6 @@ RSpec.describe "assignments/index", type: :view do
   it "renders attributes in <p>" do
     render
     expect(rendered).to match(@assignment.name)
-    expect(rendered).to match(@assignment.base_info.html_safe)
     expect(rendered).to match(@assignment.due.to_s)
   end
 
