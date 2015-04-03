@@ -1,3 +1,18 @@
+        - if @course
+          li.has-dropdown
+            a href="#" Lectures
+            ul.dropdown
+              - @course.lectures.each do |lecture|
+                li
+                  = link_to lecture.name, lecture_path(lecture)
+
+          li.has-dropdown
+            a href="#" Assignments
+            ul.dropdown
+              - @course.assignments.each do |assignment|
+                li
+                  = link_to assignment.name, assignment_path(assignment)
+
         li.has-dropdown
           = link_to "courses", courses_path
           ul.dropdown
