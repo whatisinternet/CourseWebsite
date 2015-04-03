@@ -11594,6 +11594,30 @@ return jQuery;
   };
 
 }).call(this);
+(function() {
+
+
+}).call(this);
+(function() {
+
+
+}).call(this);
+(function() {
+
+
+}).call(this);
+(function() {
+
+
+}).call(this);
+(function() {
+
+
+}).call(this);
+(function() {
+
+
+}).call(this);
 ;(function ($, window, document, undefined) {
   'use strict';
 
@@ -17693,30 +17717,6 @@ return jQuery;
 
 
 
-(function() {
-
-
-}).call(this);
-(function() {
-
-
-}).call(this);
-(function() {
-
-
-}).call(this);
-(function() {
-
-
-}).call(this);
-(function() {
-
-
-}).call(this);
-(function() {
-
-
-}).call(this);
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -17733,6 +17733,8 @@ return jQuery;
 
 
 
+
+$(document).foundation();
 $(function() {
   $(document).foundation();
 });
