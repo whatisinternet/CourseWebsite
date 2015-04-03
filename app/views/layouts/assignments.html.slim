@@ -11,7 +11,9 @@ html lang="en"
     = csrf_meta_tags
   body
     = render 'application/nav'
+
     .row
       = render 'application/messages'
       = yield
+      hr
       = render 'application/footer'

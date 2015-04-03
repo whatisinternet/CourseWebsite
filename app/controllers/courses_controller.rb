@@ -1,7 +1,7 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
-  skip_authorize_resource :only => :show
+  skip_authorize_resource only: [:show, :index]
   layout "course", only: [:index, :show]
 
   # GET /courses

@@ -8,7 +8,7 @@ RSpec.describe "courses/index", type: :view do
 
   it "renders a list of courses" do
     render
-    assert_select "tr>td", :text => @course.code.to_s, :count => 2
-    assert_select "tr>td", :text => @course.description.to_s, :count => 2
+    expect(rendered).to match(@course.code.to_s)
+    expect(rendered).to match(@course.description.to_s)
   end
 end

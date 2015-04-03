@@ -1,0 +1,25 @@
+        li.has-dropdown
+          = link_to "courses", courses_path
+          ul.dropdown
+            - Course.all.each do |course|
+              li
+                = link_to course.code, course_path(course)
+        li.has-dropdown
+          a href="#" Tools
+          ul.dropdown
+            li
+              a href="http://www.tutorialspoint.com/codingground.htm" Coding Ground
+            li
+              a href="http://jsfiddle.net/" JS Fiddle
+            li
+              a href="http://phpfiddle.org/" PHP Fiddle
+            li
+              a href="http://validator.w3.org/" W3C Validator
+        - if user_signed_in?
+          li
+            a href="/admin" Admin
+          li
+            = link_to('Logout', destroy_user_session_path, :method => :delete)
+        - else
+          li
+            = link_to('Login', new_user_session_path)

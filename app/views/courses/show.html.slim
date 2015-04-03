@@ -7,17 +7,18 @@ p#notice= notice
 .row
   .large-12.columns
     .row
-      .large-4.small-6.columns
+      .large-12.small-12.columns
         h4 Announcements
         hr/
         = render_notes.html_safe
-      .large-4.small-6.columns
+    .row
+      .large-6.small-6.columns
         h4=link_to "Assignments", assignments_path
         hr/
         = render_assignments.html_safe
-      .large-4.small-6.columns
+      .large-6.small-6.columns
         h4=link_to "Lectures", lectures_path
         hr/
-        - @lectures = @course.lectures
+        - @lectures = @course.lectures.select { |l| l.lecture_date == Date.today}
         == render partial: "courses/lectures", collection: @lectures, as: :lecture
   hr/

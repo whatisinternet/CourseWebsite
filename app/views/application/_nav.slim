@@ -4,22 +4,11 @@
       li.name
         h1
           a href=root_path = content_for?(:title) ? yield(:title) : "CourseWebsite"
-      /! Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone
       li.toggle-topbar.menu-icon
-        a href="#" 
+        a href="#"
           span Menu
     section.top-bar-section
       /! Right Nav Section
       ul.right
-        li.has-dropdown
-          a href="#"  Courses
-          ul.dropdown
-            - Course.all.each do |course|
-              li
-                a href="/courses/#{course.id}" = course.code
-        - if user_signed_in?
-          li
-            = link_to('Logout', destroy_user_session_path, :method => :delete)
-        - else
-          li
-            = link_to('Login', new_user_session_path)
+        == render partial: "default_right_nav"
+

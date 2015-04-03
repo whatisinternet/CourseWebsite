@@ -1,0 +1,27 @@
+.contain-to-grid.sticky
+  nav.top-bar data-options=("sticky_on: large") data-topbar="" role="navigation" 
+    ul.title-area
+      li.name
+        h1
+          a href=root_path = content_for?(:title) ? yield(:title) : "CourseWebsite"
+      li.toggle-topbar.menu-icon
+        a href="#"
+          span Menu
+    section.top-bar-section
+      /! Right Nav Section
+      ul.right
+        li.has-dropdown
+          a href="#" Lectures
+          ul.dropdown
+            - @course.lectures.each do |lecture|
+              li
+                = link_to lecture.name, lecture_path(lecture)
+
+        li.has-dropdown
+          a href="#" Assignments
+          ul.dropdown
+            - @course.assignments.each do |assignment|
+              li
+                = link_to assignment.name, assignment_path(assignment)
+        == render partial: "default_right_nav"
+
