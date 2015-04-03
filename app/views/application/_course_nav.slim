@@ -9,8 +9,8 @@
           span Menu
     section.top-bar-section
       /! Right Nav Section
-      - if @course
-        ul.right
+      ul.right
+        - if @course
           li.has-dropdown
             a href="#" Lectures
             ul.dropdown
@@ -24,5 +24,4 @@
               - @course.assignments.each do |assignment|
                 li
                   = link_to assignment.name, assignment_path(assignment)
-          == render partial: "default_right_nav"
-
+        == render partial: "default_right_nav"
