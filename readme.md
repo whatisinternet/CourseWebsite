@@ -18,10 +18,6 @@ simple CRUD solution in a cleaner and more up to date way.
       - Static pages -- Completed using pre-built GEM
     - Nice to have:
       - JSONAPI resources
-    - Out of scope:
-      - Slides-- will look into a possible solution for this problem as a Rails
-        API later as an add-on or engine.
-      - Full JS front-end.
 
 ## Usage
 
