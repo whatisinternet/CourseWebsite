@@ -11,14 +11,7 @@ table style="width:100%"
   tbody
     - @lectures.each do |lecture|
       tr
-        - if lecture.lecture_date < Date.today
-          td
-            h5 &#x2713;
-        - elsif lecture.lecture_date == Date.today
-          td
-            h5 &#x21d2;
-        - else
-          td
-            h5 &#x2715;
+        td
+          h5=display_style(lecture)
         td=link_to lecture.name, lecture_path(lecture)
         td= lecture.lecture_date
