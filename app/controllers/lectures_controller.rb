@@ -21,6 +21,11 @@ class LecturesController < ApplicationController
   def edit
   end
 
+  def course_lecture
+    @lectures = *(Lecture.find_by_course_id(params[:course].to_s))
+  end
+
+
   # POST /lectures
   # POST /lectures.json
   def create

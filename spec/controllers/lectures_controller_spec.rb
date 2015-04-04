@@ -161,4 +161,20 @@ RSpec.describe LecturesController, type: :controller do
     end
   end
 
+ describe "course_lecture" do
+    it "returns lectures based on course" do
+      lecture2 = FactoryGirl.create(:lecture)
+      course = FactoryGirl.create(:course)
+      @lecture.course_id = course.id
+      @lecture.save!
+      lectures = Array.new
+      lectures.push(@lecture)
+      get :course_lecture, {:course => @lecture.course_id}, valid_session
+      expect(assigns(:lectures)).to eq(lectures)
+      expect(assigns(:lectures)).not_to eq(*(lecture2))
+    end
+  end
+
+
+
 end
