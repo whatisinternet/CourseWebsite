@@ -15,6 +15,11 @@ RSpec.describe LecturesController, type: :routing do
       expect(:get => "/lectures/1").to route_to("lectures#show", :id => "1")
     end
 
+    it "routes to #lecture_list" do
+      expect(:get => "/lecture_list/1").to route_to("lectures#course_lecture", :course => "1")
+    end
+
+
     it "routes to #edit" do
       expect(:get => "/lectures/1/edit").to route_to("lectures#edit", :id => "1")
     end

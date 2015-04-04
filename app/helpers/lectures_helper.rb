@@ -4,6 +4,7 @@ module LecturesHelper
   end
 
   def display_style(lecture)
+    return "" unless lecture.lecture_date
     if lecture.lecture_date < Date.today
       "&#x2713;"
     elsif lecture.lecture_date == Date.today
