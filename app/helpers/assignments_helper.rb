@@ -6,4 +6,8 @@ module AssignmentsHelper
     end
     out_string.html_safe
   end
+  def get_course
+    @course = Course.find_by_id(@assignment.course_id) if @assignment
+  end
+
 end

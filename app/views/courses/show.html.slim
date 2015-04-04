@@ -3,7 +3,8 @@ p#notice= notice
   .large-12.columns
     h1= @course.code
     p.small= @course.description
-    hr/
+    br
+    br
 .row
   .large-12.columns
     .row
@@ -11,6 +12,8 @@ p#notice= notice
         h4 Announcements
         hr/
         = render_notes.html_safe
+    br
+    br
     .row
       .large-6.small-6.columns
         h4=link_to "Assignments", assignments_path
