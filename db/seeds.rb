@@ -11,6 +11,7 @@ puts "\n\n\n\n"
 puts "SEEDING--------"
 puts "Adding roles: admin, user, professor"
 Role.create([{:name => 'admin'}, {:name => 'user'}, {:name => 'professor'}])
+
 puts "Adding courses, assignments and lectures"
 
 courses = Array.new()
@@ -64,8 +65,7 @@ puts "removing junk users"
 User.destroy_all
 puts "done"
 puts "Creating valid user"
-pw = Faker::Lorem.characters(8)
-user = User.create({email: Faker::Internet.email, password: pw})
+user = User.create({email: Faker::Internet.email, password: "changeMe"})
 puts "Adding a role"
 user.add_role :admin
 courses.each do |course|
@@ -76,6 +76,6 @@ end
 puts "done!\n\n"
 
 puts "\n\n!!! IMPORTANT !!!\n\n\n"
-puts "Username: #{user.email}, Password: #{pw}"
+puts "Username: #{user.email}, Password: changeMe"
 puts "\n\n!!! IMPORTANT !!!\n\n"
 
