@@ -22,7 +22,7 @@ class LecturesController < ApplicationController
   end
 
   def course_lecture
-    @lectures = *(Lecture.find_by_course_id(params[:course].to_s))
+    @lectures = *(Lecture.where(course_id: params[:course].to_s).order(lecture_date: :asc))
   end
 
 

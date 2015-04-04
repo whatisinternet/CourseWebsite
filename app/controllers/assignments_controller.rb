@@ -10,7 +10,7 @@ class AssignmentsController < ApplicationController
   end
 
   def course_assignment
-    @assignments = *(Assignment.find_by_course_id(params[:course].to_s))
+    @assignments = *(Assignment.where(course_id: params[:course].to_s).order(due: :asc))
   end
 
 

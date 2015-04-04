@@ -17,7 +17,7 @@ FactoryGirl.define do
   end
 
   factory :lecture do
-    name { Faker::Lorem.characters(255) }
+    name { Faker::Lorem.characters(25) }
     content { Faker::Lorem.characters(50) }
     lecture_date Faker::Date.forward(2)
     slides { Faker::Internet.url }
@@ -26,15 +26,15 @@ FactoryGirl.define do
 
   factory :assignment do
     base_info { Faker::Lorem.paragraph }
-    name { Faker::Lorem.characters(5) }
+    name { Faker::Lorem.characters(5).upcase }
     course { FactoryGirl.create(:course) }
     due { Faker::Date.forward(23) }
   end
 
   factory :assignment_question do
     question { Faker::Lorem.paragraph }
-    question_number { 5 }
-    weight { 5 }
+    question_number { Faker::Number.digit }
+    weight { Faker::Number.digit }
     help { Faker::Lorem.paragraph }
     assignment { FactoryGirl.create(:assignment)}
   end
@@ -44,7 +44,7 @@ FactoryGirl.define do
     body    { Faker::Lorem.paragraph }
     date    { Faker::Date.forward(23) }
     course { FactoryGirl.create(:course) }
-    display { false }
+    display { [false, true].sample }
   end
 
 end
