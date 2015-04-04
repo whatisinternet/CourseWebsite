@@ -2,6 +2,6 @@
     "name": "CP476 Course Website",
     "description": "Final project for CP476",
     "repository": "https://github.com/whatisinternet/CourseWebsite",
-    "postdeploy": ["rake db:create", "rake db:migrate", "rake db:seed"]
+    "postdeploy": ["rake db:create", "rake db:migrate", "rake db:seed"],
     "keywords": ["cp476", "wlu", "laurier"]
 }
