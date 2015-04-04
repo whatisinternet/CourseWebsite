@@ -19,6 +19,7 @@ gem 'rails_admin'
 gem 'rolify'
 gem 'spark_plugs'
 gem 'newrelic_rpm'
+gem 'raygun4ruby'
 gem 'quiet_assets', group: :development
 
 group :production do
