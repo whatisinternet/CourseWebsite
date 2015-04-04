@@ -1,0 +1,16 @@
+- get_course
+
+h1 Assignments
+hr
+table style="width:100%"
+  thead
+    tr
+      th="Assignment"
+      th="Due"
+      th="Details"
+  tbody
+    - @assignments.each do |assignment|
+      tr
+        td=assignment.name
+        td="#{assignment.due.to_s}"
+        td=link_to "Details", assignment_path(assignment)

@@ -31,7 +31,6 @@ RSpec.describe AssignmentsController, type: :controller do
       expect(assigns(:assignment)).to eq(@assignment)
     end
   end
-
   describe "index" do
     it "should should return all of the assignments" do
       assignments = Assignment.all
@@ -39,4 +38,19 @@ RSpec.describe AssignmentsController, type: :controller do
       expect(assigns(:assignments)).to eq(assignments)
     end
   end
+
+  describe "course_assignment" do
+    it "returns assignments based on course" do
+      assignment2 = FactoryGirl.create(:assignment)
+      course = FactoryGirl.create(:course)
+      @assignment.course_id = course.id
+      @assignment.save!
+      assignments = Array.new
+      assignments.push(@assignment)
+      get :course_assignment, {:course => @assignment.course_id}, valid_session
+      expect(assigns(:assignments)).to eq(assignments)
+      expect(assigns(:assignments)).not_to eq(*(assignment2))
+    end
+  end
+
 end

@@ -9,6 +9,10 @@ class AssignmentsController < ApplicationController
 
   end
 
+  def course_assignment
+    @assignments = *(Assignment.find_by_course_id(params[:course].to_s))
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
