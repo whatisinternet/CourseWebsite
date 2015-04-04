@@ -16,11 +16,11 @@ p#notice= notice
     br
     .row
       .large-6.small-6.columns
-        h4=link_to "Assignments", assignments_path
+        h4=link_to "Assignments", assignment_list_path(@course)
         hr/
         = render_assignments.html_safe
       .large-6.small-6.columns
-        h4=link_to "Lectures", lectures_path
+        h4=link_to "Lectures", lecture_list_path(@course)
         hr/
         - @lectures = @course.lectures.select { |l| l.lecture_date == Date.today}
         == render partial: "courses/lectures", collection: @lectures, as: :lecture

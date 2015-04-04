@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :assignments
   resources :courses
 
+  get '/assignment_list/:course', to: 'assignments#course_assignment', as: 'assignment_list'
+  get '/lecture_list/:course', to: 'lectures#course_lecture', as: 'lecture_list'
   get 'page/index'
 
   devise_for :users
