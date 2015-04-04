@@ -20,6 +20,7 @@ gem 'rolify'
 gem 'spark_plugs'
 gem 'newrelic_rpm'
 gem 'raygun4ruby'
+gem 'figaro'
 gem 'quiet_assets', group: :development
 
 group :production do
