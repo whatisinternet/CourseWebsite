@@ -1,4 +1,13 @@
+[![build
+Status](https://travis-ci.org/whatisinternet/CourseWebsite.svg?branch=master)](https://travis-ci.org/whatisinternet/CourseWebsite)
+[![Code
+Climate](https://codeclimate.com/github/whatisinternet/CourseWebsite/badges/gpa.svg)](https://codeclimate.com/github/whatisinternet/CourseWebsite)
+[![Test
+Coverage](https://codeclimate.com/github/whatisinternet/CourseWebsite/badges/coverage.svg)](https://codeclimate.com/github/whatisinternet/CourseWebsite)
+
+### Deploy
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
 ### Introduction
 ----------------
 This replaces the current website framework used by Dr. Fan for his various
