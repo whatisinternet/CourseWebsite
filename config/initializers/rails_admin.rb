@@ -30,5 +30,33 @@ RailsAdmin.config do |config|
     ## With an audit adapter, you can add:
     # history_index
     # history_show
+
+    config.model Course do
+      navigation_label 'Courses'
+    end
+    config.model Note do
+      parent Course
+    end
+    config.model Lecture do
+      parent Course
+    end
+
+    config.model Assignment do
+      parent Course
+    end
+
+    config.model AssignmentQuestion do
+      parent Assignment
+    end
+
+    config.model User do
+      navigation_icon 'icon-uer'
+      navigation_label 'User Management'
+    end
+
+    config.model Role do
+      navigation_label 'User Management'
+    end
+
   end
 end
