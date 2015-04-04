@@ -1,3 +1,4 @@
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 ### Introduction
 ----------------
 This replaces the current website framework used by Dr. Fan for his various
