@@ -48,7 +48,3 @@ simple CRUD solution in a cleaner and more up to date way.
   rails s
   ```
 
-### Notes:
-
-The seeds file will get you up and going with several classes, assignments,
-courses and users so you can try things out quickly.
