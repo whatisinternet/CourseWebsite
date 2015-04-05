@@ -4,7 +4,7 @@
     "repository": "https://github.com/whatisinternet/CourseWebsite",
     "addons": ["heroku-postgresql:hobby-dev", "papertrail", "newrelic"],
     "scripts": {
-      "postdeploy": "rake db:setup"
+      "postdeploy": "rake db:migrate && rake db:seed"
     },
     "keywords": ["cp476", "wlu", "laurier"]
 }
