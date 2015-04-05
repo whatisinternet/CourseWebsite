@@ -10,7 +10,7 @@ puts "SEEDING--------"
 puts "Adding roles: admin, user, professor"
 Role.create([{:name => 'admin'}, {:name => 'user'}, {:name => 'professor'}])
 puts "Creating valid user"
-user = User.create({email: changeme@changeme.com, password: "changeMe"})
+user = User.create({email: "changeme@changeme.com", password: "changeMe"})
 puts "Adding a role"
 user.add_role :admin
 puts "done!\n\n"
