@@ -3,6 +3,8 @@
     "description": "Final project for CP476",
     "repository": "https://github.com/whatisinternet/CourseWebsite",
     "addons": ["heroku-postgresql:hobby-dev", "papertrail", "newrelic"],
-    "postdeploy": ["rake db:migrate", "rake db:seed"],
+    "scripts": {
+      "postdeploy": ["rake db:migrate", "rake db:seed"]
+    },
     "keywords": ["cp476", "wlu", "laurier"]
 }
